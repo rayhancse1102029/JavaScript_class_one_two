@@ -2,7 +2,95 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<br />
+<section>
+
+    <p id="demo"></p>
+
+
+    <br />
+
+    <form>
+        <div class="form-group row">
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <input type="number" id="firstNumber" class="form-control" />
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <input type="number" id="secondNumber" class="form-control" />
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <button type="button" class="btn btn-success btn-sm" onclick="calculateFun()">calculate</button>
+            </div>
+        </div>
+    </form>
+
+    <div id="loop"></div>
+
+</section>
+
+@section Scripts{ 
+
+    <script>
+
+        var x = 10;
+        var y = 20;
+        var z = x + y;
+
+        $(document).ready(function () {
+
+            $("#demo").text(z);
+            $("#demo").css('font-size', '150px');
+
+        });
+
+        var colorToggle = 1;
+
+        function calculateFun() {
+            var first = $("#firstNumber").val();
+            var second = $("#secondNumber").val();
+            var sum = parseInt(first) + parseInt(second);
+
+            $("#demo").text(sum);
+
+            //if (colorToggle == 1) {
+
+            //    $("#demo").css('color', 'red');
+            //    colorToggle = colorToggle + 1;
+            //}
+            //else if (colorToggle == 2) {
+
+            //    $("#demo").css('color', 'green');
+            //    colorToggle = colorToggle + 1;
+
+            //} else if (colorToggle == 3) {
+
+            //    $("#demo").css('color', 'yellow');
+            //    colorToggle = 1;
+
+            //}
+
+            if (colorToggle % 2 == 0) {
+                $("#demo").css('color', 'green');
+                colorToggle++;
+            }
+            else {
+                $("#demo").css('color', 'red');
+                colorToggle++;
+            }
+
+            $("#loop").empty();
+
+            for (var i = 1; i <= sum; i++) {
+                if (i % 2 == 0) {
+                    $("#loop").append('<span style="color:red; padding-left:10px;">' + i + '</span>');
+                }
+                else {
+                    $("#loop").append('<span style="color:green; padding-left:10px;">' + i + '</span>');
+                }
+            }
+
+        }
+
+    </script>
+
+}

@@ -14,6 +14,10 @@ namespace JavaScript_Practice_One.Controllers
         {
             return View();
         }
+        public IActionResult  javaScript()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
