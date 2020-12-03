@@ -1,21 +1,17 @@
 ﻿
 @{
-    ViewData["Title"] = "javaScript";
+    ViewData["Title"] = "Index2";
 }
 
-<h1>javaScript </h1>
-
-<br />
-
+<h1>Index2</h1>
 <section>
-
-    <p  id="txtView"></p>
-
-    <br/>
+    <p id="fristPrm"></p>
+    <br />
     <form>
+
         <div class="form-group row">
             <div class="col-xl-2 col-lg-2 col-md-2">
-                <input type="number" id="x"  class="form-control" />
+                <input type="number" id="x" class="form-control" />
             </div>
             <div class="col-xl-2 col-lg-2 col-md-2">
                 <input type="number" id="y" class="form-control" />
@@ -24,17 +20,18 @@
                 <button type="button" class="btn btn-success btn-sm" onclick="sumFun()">calculate</button>
             </div>
         </div>
-
     </form>
-
 </section>
-@section scripts{
+
+@section scripts{ 
     <script>
-        sumFun();
-        var x = $('#X').val();
+        sum();
+        var x = $('#x').val();
         var y = $('#y').val();
         var sum = parseInt(x) + parseInt(y);
-        $("txtView").text(sum);
-            
-        </script>
- }
+        $("fristPrm").taxt(sum);
+
+    </script>
+}
+
+

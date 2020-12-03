@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index3";
+}
+
+<h1>Index3</h1>
+<br />
+
+<section>
+    <p id="rakib">Hello Result</p>
+    <br />
+    <form>
+        <div class="form-group row">
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <input type="number" id="A" class="form-control" />
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <input type="number" id="B" class="form-control" />
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2">
+                <button type="button" class="btn btn-success btn-sm" onclick="sumFun()">calculate</button>
+            </div>
+        </div>
+    </form>
+
+</section>
+
+@section Scripts{
+
+    <script>
+
+        //sumFun();
+
+
+        function sumFun() {
+
+            var A = $('#A').val();
+            var B = $('#B').val();
+            var sum = parseInt(A) + parseInt(B);
+            $("#rakib").text(sum);
+        }
+
+    </script>
+
+}
